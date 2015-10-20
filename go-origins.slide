@@ -1,0 +1,174 @@
+Go
+
+Michael Ingold
+Developer and Gopher
+github: enzian
+@michaelingold
+dotznt@michaelingold.ch
+
+* How Go came to life
+
+"Quote: When the three of us [Ken Thompson, Rob Pike, and Robert Griesemer] got started, it was pure research. The three of us got together and decided that we hated C++."
+
+Issues with C++
+- Huge language (tons of features)
+- Concurrency is a pain (so developers try to avoid it)
+- Large code bases – long build times
+- Old and laborious tools (make and co.)
+
+* Adoption
+.image images/go_search.png
+.image images/geo.png
+
+* Adoption
+.image images/github.png
+
+* GOs trademarks
+
+- Compiled and stat. linked
+- Typesafe
+- Garbage collected
+- Plattform independent
+- Source Code only dependencies
+- Solid Tooling
+
+* Simplicity
+- Keywords:
+  break        default      func         interface    select
+  case         defer        go           map          struct
+  chan         else         goto         package      switch
+  const        fallthrough  if           range        type
+  continue     for          import       return       var
+
+- Operators
+  +    &     +=    &=     &&    ==    !=    (    )
+  -    |     -=    |=     ||    <     <=    [    ]
+  *    ^     *=    ^=     <-    >     >=    {    }
+  /    <<    /=    <<=    ++    =     :=    ,    ;
+  %    >>    %=    >>=    --    !     ...   .    :
+       &^          &^=
+
+* Simplicity (2)
+- Variable declaration
+.code code/declarations.go 2,2
+- Duck typed variable
+.code code/declarations.go 4,4
+- Function
+.code code/declarations.go 7,8
+- Type
+.code code/declarations.go 11,11
+- Interface
+.code code/declarations.go 14,14
+
+* Typesystem
+- No polymophism
+- No generics
+- (almost) No Reflection
+- Interfaces!
+
+* Typedefinitions
+- Struct type definition
+.code code/typedefinitions.go 1,7
+
+- Function Type definition
+.code code/typedefinitions.go 10,10
+
+- Interface type defintion
+.code code/typedefinitions.go 12,14
+
+* Interfaces
+Interfaces are satisfied implicitly - FileReader satifies the Reader interface
+
+.code code/typedefinitions.go 12,17
+
+* FAQ: Types:
+Q : Does Go support generics?
+A : No!
+
+Q	: How about polymophism?
+A : Nope!
+
+Q	: … Reflection?
+A : Not really…
+
+* Concurrency
+
+- Goroutines
+- Channels
+- Classic synchronization structures
+
+* Go Routines
+.play code/concurrency1.go
+
+* Channels
+.play code/channels1.go
+
+* Buffered channels
+- Buffered
+.play code/channels2.go
+
+* Unbuffered channels
+.play code/channels3.go
+
+* Channel direction
+- Read-only channels
+.code code/channels4.go 17,20
+- Write-only channels
+.code code/channels4.go 12,15
+- TwoWay channels
+.code code/channels4.go 6,6
+
+* Channel direction (2)
+.play code/channels4.go
+
+* Channels as control structures
+.play code/channels_quit.go 8,22
+
+* Tooling
+"GO was designed with tooling in mind"
+Rob Pike
+
+* The GO command
+- Main command – prints some help.
+  $ go
+- Compile and executes the given go file.
+  $ go run main.go
+- Pulls in a new dependency from the given GIT or Hg repo into your GOPATH/src directory
+  $ go get github.com/ahmetalpbalkan/go-linq
+- Compiles the given file (the the files in the current directory) and write the results to the GOPATH/pkg or /bin directory
+  $ go build
+
+* The GO command (2)
+- Compiles and executes all tests in all the files in the current directory, their dependencies and subdirectories.
+  $ go test ./..
+- Generates code from existing source files (can be used to create ‘generics’)
+  $ go generate
+
+* Editor Integration
+- Atom (go-plus)
+- Eclipse (GoClipse)
+- IntelliJ IDEA
+- Sublime
+- Notepad++
+- Many others
+- coming soon: VS Code!!
+
+* Usefull Tools
+.link https://github.com/nsf/gocode GoCode
+  Helps integrating with IDEs to enable context sensitive autocompletition.
+.link https://godoc.org/ GoDoc
+  Godoc extracts and generates documentation for Go programs.
+.link https://github.com/FiloSottile/gvt Gvt
+  simple Go vendoring tool which helps you manage your dependencies.
+
+.link https://golang.org/cmd/gofmt/ Gofmt
+  Formats you code to match the go codeguidelines
+.link https://golang.org/cmd/vet/ GoVet
+  Vet examines Go source code and reports suspicious constructs
+
+Many others at [[https://golang.org/cmd/]]
+
+* References
+- [[https://golang.org/]]
+- [[https://play.golang.org]]
+- [[https://gobyexample.com/]]
