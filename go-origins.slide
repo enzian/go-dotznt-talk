@@ -104,7 +104,6 @@ A : Not really…
 .play code/channels1.go
 
 * Unbuffered channels
-- Buffered
 .play code/channels2.go
 
 * Buffered channels
