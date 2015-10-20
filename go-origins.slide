@@ -103,11 +103,11 @@ A : Not really…
 * Channels
 .play code/channels1.go
 
-* Buffered channels
+* Unbuffered channels
 - Buffered
 .play code/channels2.go
 
-* Unbuffered channels
+* Buffered channels
 .play code/channels3.go
 
 * Channel direction
